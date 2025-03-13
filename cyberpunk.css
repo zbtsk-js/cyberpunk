@@ -602,15 +602,14 @@ max-width: 240px;
     grid-template-rows: auto auto;
     width: 320px;
     column-gap: 80px;
+    row-gap: 4.5vw;
 }
 
 .pc-image {
     grid-column: 1;
 }
 
-.stadia-image {
-    margin-top: 47px;
-}
+
 
 
 .purchase__platforms-section {
@@ -1025,6 +1024,7 @@ margin-inline: auto;
     .purchase_body {
         padding-bottom: 70px;
         padding-top: 0;
+        padding-inline: 10px;
     }
 
     .raffle-body__inner {
