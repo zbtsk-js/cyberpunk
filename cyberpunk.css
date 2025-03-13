@@ -972,7 +972,7 @@ margin-inline: auto;
 
     .h3-title {
         font-size: 6.05vw;
-        line-height: clamp(30px, 4vw, 62px);
+        line-height: clamp(30px, 6vw, 62px);
     }
 
     .Hp-ad__body-section {
