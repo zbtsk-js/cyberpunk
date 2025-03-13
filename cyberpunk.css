@@ -1,0 +1,1046 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(fonts/Roboto-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(fonts/Roboto-Bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Archangelsk';
+    src: url(fonts/Archangelsk.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(fonts/Roboto-Light.woff2) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/**
+  Нормализация блочной модели
+ */
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+ }
+ 
+ /**
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+ :where(ul, ol):where([class]) {
+   padding-left: 0;
+ }
+ 
+ /**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+ body,
+ :where(blockquote, figure):where([class]) {
+   margin: 0;
+ }
+ 
+ /**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+ :where(
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   p,
+   ul,
+   ol,
+   dl
+ ):where([class]) {
+   margin-block: 0;
+ }
+ 
+ :where(dd[class]) {
+   margin-left: 0;
+ }
+ 
+ /**
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
+ :where(ul[class]) {
+   list-style: none;
+ }
+ 
+ /**
+   Упрощаем работу с изображениями
+  */
+ img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+ }
+ 
+ /**
+   Наследуем свойства шрифт для полей ввода
+  */
+ input,
+ textarea,
+ select,
+ button {
+   font: inherit;
+ }
+ 
+ html {
+   /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+   height: 100%;
+   /**
+     Плавный скролл
+    */
+   scroll-behavior: smooth;
+ }
+ 
+ body {
+   /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+   min-height: 100%;
+   /**
+     Унифицированный интерлиньяж
+    */
+   line-height: 1.5;
+ }
+ 
+ /**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+ @media (prefers-reduced-motion: reduce) {
+   * {
+     animation-duration: 0.01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: 0.01ms !important;
+     scroll-behavior: auto !important;
+   }
+ }
+
+ :root {
+
+      --yellow-color: #F8F200;
+     --white-color: #FFFF;
+     --black-color: #000;
+     
+     --font-family-base: 'Roboto', 'sans-serif';
+     --font-family-accent: 'Archangelsk', 'sans-serif';
+     --container-width: 1320px;
+     --container-padding: 15px;
+     --header-hight:74px;
+     --border-radius:50px ;
+ }
+ 
+ 
+ h1,h2,h3,h4,h5,h6 {
+font-family: var(--font-family-accent);
+font-weight: 400;
+font-size: 62px;
+line-height: 63.3px;
+margin:0 ;
+ }
+ 
+
+ .container { 
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+ }
+
+ 
+
+ body {
+    font-family: var(--font-family-base);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 34px;
+ }
+
+ a {
+    text-decoration: none;
+    
+ }
+
+ 
+.button {
+    border-radius: var(--border-radius);
+    border: none;
+}
+
+.important-detail {
+font-family: var(--font-family-base);
+font-weight: 700;
+line-height: 34px;
+color: #52BEDC;
+}
+
+ 
+
+ .header-menu-list {
+    display: flex;
+    column-gap: 44px;
+    align-items: center;
+ }
+
+.header-menu-link {
+    flex-shrink:0;
+}
+
+
+.line {
+    width: 100%;
+}
+
+
+
+.blue-box {
+    height: 100vh;
+    width: 100%;
+    background: url(/cyberpunkproject/images/11.png) center / cover no-repeat;
+}
+
+
+
+.banner-body {
+    width: 624px;
+    height: 369px;
+    padding-inline: 70px;
+    padding-block: 70px;
+    background-color: #F8F200;
+    display: flex;
+    row-gap: 25px;
+    flex-direction: column;
+    clip-path: polygon(11% 0, 100% 0, 100% 88%, 90% 100%, 0 100%, 0% 60%, 0 15%);
+    bottom:0;
+    right: 15px;
+
+}
+
+
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.banner-info {
+font-family: var(--font-family-accent);
+font-weight: 400;
+font-size: 62px;
+line-height: 63.3px;
+color: #000;
+
+}
+
+.banner-button {
+    width: 278px;
+    height: 78px;
+    padding-inline: 50px;
+    padding-block: 19px;
+    background-color: #000;
+    color: #F8F200;
+    font-family: var(--font-family-base);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+}
+
+.banner-container {
+    inset: 0;
+    position: absolute;
+}
+
+.banner-body {
+    position: absolute;
+}
+
+.night-city__inner {
+    padding-block: 70px;
+}
+
+.night-city-photos {
+    display: grid;
+    gap: 32px 32px;
+    align-items: center;
+    justify-content: center;
+
+}
+.big {
+    grid-column: 2;
+    grid-row: 1/3;
+    
+}
+
+.night-city__description {
+    margin-top: 25px;
+    margin-bottom: 70px;
+    max-width:788px ;
+}
+
+.raffle-title {
+font-family: var(--font-family-accent);
+font-weight: 400;
+font-size: 62px;
+line-height: 63px;
+display: flex;
+align-items: end;
+column-gap: 32px;
+
+}
+
+.raffle-header {
+    row-gap: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.raffle__input-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+    
+}
+
+.raffle-body__inner {
+    display: flex;
+    column-gap: 181px;
+}
+
+
+.form {
+    width: 460px;
+    height: 35px;
+    font-weight: 300;
+    font-family: var(--font-family-base);
+    border-inline: none;
+    border-top: none;
+    border-bottom: 1px solid #7777;
+    background-color: #000;
+    color: #FFF;
+    
+}
+
+.raffle__photos-section {
+    display: flex;
+    column-gap: 32px;
+}
+
+.raffle__file-form {
+    width: 460px;
+    height: 120px;
+    padding-inline: 137px;
+    padding-block: 40px;
+    border-style: dashed;
+   border: 1px dashed #777777;
+}
+
+.raffle-description, .raffle-title {
+    color: #FFFF;
+}
+
+.raffle {
+    background-color: #000;
+    padding-bottom: 70px;
+    padding-top: 15px;
+}
+
+.raffle__form-button {
+    border: var(--border-radius);
+    height: 59px;
+    width: 192px;
+    padding-inline: 50px;
+    padding-block: 20px;
+    background-color: var(--yellow-color);
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+
+}
+
+.raffle__agreement-text {
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.raffle-title::before {
+    content: '';
+    background: url('/cyberpunkproject/icons/icon-title.svg') center/contain no-repeat;
+    width: 132px;
+    height: 132px;
+
+}
+
+.raffle__photos-section {
+    column-gap: 32px;
+    margin-top: 25px;
+    align-items: center;
+}
+.raffle__inner {
+    row-gap: 98px;
+    display: flex;
+     flex-direction: column;
+}
+
+
+.raffle__form-section {
+    row-gap: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.x-box {
+   position: relative;
+   z-index: 10;
+}
+
+.x-box::after {
+    content: '';
+    background: url('/cyberpunkproject/images/yellow-line.png') center/contain no-repeat;
+    width: clamp(131px, 29.95vw, 460px);
+    height: clamp(150px, 29.75vw, 456px);
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+    left: -123px;
+    top: -18px;
+}
+
+.ps-4 {
+    position: relative;
+    z-index: 1;
+}
+
+.ps-4::after {
+    content: '';
+    background: url('/cyberpunkproject/images/blue-line.png') center/contain no-repeat;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    inset: 0;
+    left: -153px;
+    top: -6px;
+    width: clamp(131px, 29.95vw, 460px);
+    height: clamp(150px, 28.75vw, 456px);
+}
+
+.hp-ad__title {
+    color: #000;
+}
+
+.hp-ad__inner {
+    display: flex;
+    column-gap: 32px;
+    padding-block: 70px;
+    
+}
+
+.Hp-ad {
+    background-color: #F8F200;
+}
+
+.Hp-ad__transition-line{
+    width: 100%;
+}
+
+.Hp-ad__body-section {
+    width: 624px;
+height: 526px;
+row-gap: 25px;
+display: flex;
+flex-direction: column;
+}
+
+.Hp-ad__logo-section {
+    
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 26px;
+}
+
+.logos {
+    column-gap: 25px;
+}
+
+.logos {
+    display: flex;
+    width: 540px ;
+    margin-inline: auto;
+}
+
+
+.characteresctics-list {
+    row-gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.characteresctics {
+row-gap: 40px;
+display: flex;
+    flex-direction: column;
+}
+
+.characteresctic {
+    display: flex;
+    column-gap: 10px;
+}
+
+.hp-ad__button {
+    width: 194px;
+height: 59px;
+padding-block: 15px;
+padding-inline: 50px;
+color: #F8F200;
+background-color: #000;
+font-weight: 700;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+}
+
+
+.purchase {
+    display: flex;
+    column-gap: 32px;
+    background-color: #000;
+    
+}
+
+.Purchase_title {
+    color: #FFF;
+    
+}
+
+.purchase_body {
+    padding-block: 70px;
+    width: 976px;
+    row-gap: 25px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+}
+
+.title {
+font-weight: 700;
+font-size: 24px;
+line-height: 28px;
+color: #52BEDC;
+max-width: 240px;
+}
+
+.cyberpunk-lastimage {
+    object-fit: cover;
+    height: 100%;
+}
+
+    
+
+
+
+.set-item {
+    display: flex;
+    color: #FFF;
+}
+
+.purchase__gaming-set {
+    row-gap: 15px;
+    display: flex
+;
+    flex-direction: column;
+}
+
+.set-list {
+    row-gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.platform-photos {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    width: 320px;
+    column-gap: 80px;
+}
+
+.pc-image {
+    grid-column: 1;
+}
+
+.stadia-image {
+    margin-top: 47px;
+}
+
+
+.purchase__platforms-section {
+    row-gap: 25px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.footer__upper-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 15px;
+    
+}
+
+.footer-logos {
+    display: flex;
+    column-gap: 32px;
+}
+
+.footer-license {
+display: flex;
+column-gap: 32px;
+}
+
+.link {
+    color: #000;
+}
+
+.footer-marks {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    background-color: #000;
+    color: #FFF;
+}
+
+
+.night-city__consoles {
+    display: none;
+}
+
+
+
+
+
+@media(max-width:1168px) {
+    .ps-4::after {
+
+left: -130px;
+ top: -6px;
+width: clamp(131px, 28.95vw, 460px);
+ height: clamp(150px, 28.75vw, 456px);
+    }
+
+    .x-box::after {
+top: -32px;
+    }
+}
+
+@media(max-width:1118px) {
+    .ps-4::after {
+        left: -96px;
+        top: -38px;
+        width: clamp(131px, 26.3vw, 460px);
+        height: clamp(150px, 26.7vw, 456px);
+    }
+
+    .x-box::after {
+        width: clamp(131px, 27.2vw, 460px);
+    height: clamp(150px, 27.75vw, 456px);
+    left: -123px;
+    top: -30px;
+    
+    }
+}
+
+.transition-line-image {
+    width: 100%;
+    top: -15px;
+    position: relative;
+}
+
+
+@media (max-width:1280px) {
+    .logos {
+        display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    row-gap: 31px;
+    width: 320px;
+    height: 230px
+    }
+
+    .hp-logo {
+        grid-column: 1 / end;
+        grid-row: 1;
+        position: relative;
+        right: -116px;
+    }
+    
+    .lines {
+        grid-row: 2;
+    position: relative;
+    left: 115px;
+    }
+
+    .last-logo {
+        grid-row: 3;
+    }
+}
+
+
+
+
+
+@media (max-width:1024px)  {
+.banner-body {
+    width: 100%;
+    right: 0;
+    padding-inline: clamp(15px,6.83vw,70px);
+    padding-block: clamp(30px,6.83vh,70px);
+    align-items: center;
+    justify-content: center;
+    height: clamp(207px, 36vh, 369px);
+    padding-top: clamp(30px, 6.83vw, 70px);;
+    bottom: -100px;
+}
+
+.banner-info {
+   font-size:clamp(30px, 6.06vw, 62px);
+   text-align: center;
+   line-height: 30px;
+
+
+
+}
+
+.ps-4::after {
+    left: -134px;
+    top: -5px;
+    width: 460px;
+    height: 456px;
+}
+
+.x-box::after {
+    width: 460px;
+    height: 456px;
+    left: -166px;
+    top: -30px;
+}
+
+
+    
+
+.banner-button {
+    width: 272px;
+    height: 78px ;
+    font-size: min(24px,20px);
+    padding-block: clamp(10px,1.85vh,19px);
+}
+
+.big {
+    grid-column: 1 / 3;
+    width: 100%;
+    grid-row: none;
+}
+
+
+
+.night-city__inner {
+    margin-top:140px ;
+}
+
+.raffle-header {
+    max-width: 460px;
+}
+
+.raffle__photos-section {
+    row-gap: 71px;
+    
+    flex-wrap: wrap;
+    position: relative;
+    top: -410px;
+}
+
+.raffle-title {
+    align-items: start;
+    flex-direction: column;
+}
+
+.raffle__form-section {
+    height: 460px;
+}
+
+.raffle-body__inner {
+    height: 550px;
+}
+
+.Hp-ad__body-section {
+    row-gap: 15px;
+
+}
+.hp-ad__inner {
+    column-gap: 20px;
+}
+
+.hp-ad__description {
+    font-size: 16px;
+}
+.characteresctics-list {
+    row-gap: 10px;
+}
+    
+}
+
+
+
+@media (max-width:800px) {
+    .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-basis: 100%;
+    }
+
+    .header-menu-list {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width:1335px) and (max-height:660px) {
+
+    .night-city__inner {
+        margin-top:140px ;
+    }
+    
+
+    .banner-body {
+        width: 100%;
+        right: 0;
+        padding-inline: clamp(15px,6.83vw,70px);
+        padding-block: clamp(30px,6.83vh,70px);
+        align-items: center;
+        justify-content: center;
+        height: clamp(207px, 36vh, 369px);
+        padding-top: clamp(30px, 6.83vw, 70px);;
+        bottom: -100px;
+        font-size: clamp(30px,6.06vw,70px);
+    }
+    
+    .banner-info {
+       font-size:clamp(30px, 6vw, 62px);
+       text-align: center;
+       line-height: 30px;
+    }
+
+    .banner-button {
+        width: 272px ;
+        height: 78px ;
+        font-size: min(24px,20px);
+        padding-block: clamp(10px,1.85vh,19px);
+    }
+}
+
+
+@media (max-width:994px) {
+
+    .ps-4::after {
+        left: -92px;
+        top: -0.6vh;
+        width: 33vw;
+        height: 66.5vh;
+    }
+
+    .x-box::after {
+        width: 32.92vw;
+        height: 456px;
+        left: -148px;
+        top: -30px;
+}
+
+.raffle__photos-section {
+    display: none;
+}
+.ps4-picture{
+    top: 50px;
+    position: relative;
+    width: 28.4vw;
+}
+
+.xbox-picture {
+    position: relative;
+    top: 70px;
+    width: 27.4vw;
+}
+
+.form,.raffle__file-form {
+    width: 93vw;
+}
+
+.night-city__consoles {
+    display: flex;
+    order: -2;
+     position: relative;
+     bottom: -138px;
+}
+.raffle-title::before {
+    position: relative;
+    top: -23vw;
+}
+
+.ps4-image,.xbox-image {
+    width: 25vw;
+}
+}
+
+
+
+@media (max-width:955px) {
+ .hp-ad__inner {
+    display: flex;
+    flex-direction: column;
+ }
+
+    .logos {
+        display: flex;
+        justify-content: center;
+        height: 109px;
+    }
+ .hp-logo,.lines {
+    position: static;
+ }
+
+ .Hp-ad__body-section {
+margin-inline: auto;
+ }
+
+ 
+
+
+
+}
+    .raffle-consoles {
+        display: flex;
+    flex-direction: column;
+    }
+
+    .raffle__inner {
+        row-gap: 75px;
+    }
+
+    .h3-title {
+        font-size: 6.05vw;
+        line-height: clamp(30px, 4vw, 62px);
+    }
+
+    .Hp-ad__body-section {
+        width: auto; 
+        height: auto;
+        
+    }
+
+    .footer-logos {
+        flex-direction: column;
+    align-items: center;
+    padding-block: 25px;
+    }
+
+    .footer__upper-inner {
+        flex-direction: column;
+        padding: 0;
+        
+    }
+
+    .footer-license {
+        flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #E6E6E6;
+    padding-block: 25px;
+    row-gap: 15px;
+    }
+
+    .purchase {
+        flex-direction: column;
+    }
+
+    .cyberpunk-lastimage {
+        max-height: 200px;
+    }
+
+    .Purchase_title h4 {
+        font-size: clamp(30px,6.25vw,63px);
+    }
+
+    .hp-logo {
+        height: clamp(44px, 4vw, 80px);
+     }
+     .last-logo {
+        width: clamp(175px, 32vw, 320px);
+    }
+
+    .purchase_body {
+        padding-bottom: 70px;
+        padding-top: 0;
+    }
+
+    .raffle-body__inner {
+      height: clamp(381px, 37vh, 460px);
+    }
+    
+
+   
+ 
+   
+@media(max-width:320px) {
+    .night-city-photos {
+        display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    }
+    
+
+}
