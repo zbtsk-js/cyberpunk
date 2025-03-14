@@ -264,13 +264,14 @@ color: #000;
     height: 78px;
     padding-inline: 50px;
     padding-block: 19px;
-    background-color: #000;
+    background-color:#000;
     color: #F8F200;
     font-family: var(--font-family-base);
     font-weight: 700;
     font-size: 24px;
     line-height: 40px;
     text-align: center;
+    border: none;
 
 }
 
